@@ -117,7 +117,7 @@ select
     left: 0;
     opacity: 0.8;
     z-index: 10;
-    border: 2px solid #3A39AA;
+    border: 2px solid #99aa39b7;
     border-radius: 5px;
     background: rgb(140,140,140);
     background: linear-gradient(15deg, rgba(140,140,140,0.2) 0%, rgba(255,255,255,0.2) 56%);
