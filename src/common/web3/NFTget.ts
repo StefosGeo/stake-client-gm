@@ -90,17 +90,17 @@ export async function getNFTMetadataForMany(
   let nfts_temp : { [key: string]: any } = {};
   nfts_temp = (await Promise.all(promises)).filter((n) => !!n);
  
-  let tok=[];
-  for( let nft in nfts_temp)
-  {
-    if(nfts_temp[nft].onchainMetadata?.data?.creators?.length > 0)
-    {
-      let address =  nfts_temp[nft].onchainMetadata.data.creators[0]?.address || " ";
-      if(address == '7HdtUewmjpFnE8SKhZDYGCKmL75ZWUxJp6xa1HrmJww8'|| address == 'AGDBeUaKReqE3DdtWq6J9TRAarScBRhGJ77cD82wLNvD' || address == '5gx13mAde8kjx2aevhceBJtiPDNo78WppFzd9RdVN5ch' )
-        tok.push(nfts_temp[nft]);
-    }
-  }
-  const nfts = tok
+  // let tok=[];
+  // for( let nft in nfts_temp)
+  // {
+  //   if(nfts_temp[nft].onchainMetadata?.data?.creators?.length > 0)
+  //   {
+  //     let address =  nfts_temp[nft].onchainMetadata.data.creators[0]?.address || " ";
+  //     if(address == '7HdtUewmjpFnE8SKhZDYGCKmL75ZWUxJp6xa1HrmJww8'|| address == 'AGDBeUaKReqE3DdtWq6J9TRAarScBRhGJ77cD82wLNvD' || address == '5gx13mAde8kjx2aevhceBJtiPDNo78WppFzd9RdVN5ch' )
+  //       tok.push(nfts_temp[nft]);
+  //   }
+  // }
+  const nfts = nfts_temp;
   
   console.log(`found metadata matching${nfts.length} tokens : filtered ${nfts_temp.length - nfts.length}`);
 
